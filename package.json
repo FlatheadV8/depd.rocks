@@ -1,0 +1,8 @@
+{
+  "name": "depd.rocks",
+  "version": "1.0.0",
+  "license": "MIT",
+  "devDependencies": {
+    "wrangler": "^2.0.27"
+  }
+}
