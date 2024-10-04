@@ -1,0 +1,31 @@
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+indent_size = 4
+indent_style = space
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[*.{md,mdx}]
+trim_trailing_whitespace = false
+
+[*.{toml,ini}]
+indent_size = 2
+
+[*.{json,webmanifest}]
+indent_size = 2
+
+[*.{yaml,yml}]
+indent_size = 2
+indent_style = space
+
+[*.{xml,svg}]
+indent_size = 2
+
+[*.{sh,ps1}]
+end_of_line = lf
+
+[*.{cmd,bat}]
+end_of_line = crlf

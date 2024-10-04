@@ -1,13 +1,43 @@
 {
-  "name": "depd.rocks",
+  "name": "depd",
   "version": "0.0.0",
   "type": "module",
   "private": true,
-  "scripts": {
-    "deploy": "wrangler pages deploy src",
-    "dev": "wrangler pages dev src --live-reload"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/flatheadv8/depd.git"
   },
-  "devDependencies": {
-    "wrangler": "^3.0.0"
+  "engines": {
+    "node": ">=20",
+    "npm": "please-use-pnpm",
+    "pnpm": ">=9",
+    "yarn": "please-use-pnpm"
+  },
+  "packageManager": "pnpm@9.12.0+sha256.a61b67ff6cc97af864564f4442556c22a04f2e5a7714fbee76a1011361d9b726",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro check && astro build && wrangler pages dev --live-reload",
+    "deploy": "astro check && astro build && wrangler pages deploy"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/tailwind": "^5.1.1",
+    "@eslint/js": "^9.11.1",
+    "@types/eslint-config-prettier": "^6.11.3",
+    "@types/eslint__js": "^8.42.3",
+    "astro": "^4.15.11",
+    "eslint": "^9.11.1",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-astro": "^1.2.4",
+    "globals": "^15.10.0",
+    "jiti": "^2.2.1",
+    "prettier": "^3.3.3",
+    "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-tailwindcss": "^0.6.8",
+    "tailwindcss": "^3.4.13",
+    "typescript": "^5.6.2",
+    "typescript-eslint": "^8.8.0",
+    "wrangler": "^3.80.0"
   }
 }

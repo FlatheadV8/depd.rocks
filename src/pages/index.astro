@@ -1,0 +1,79 @@
+---
+import A from "../components/A.astro";
+import H1 from "../components/H1.astro";
+import P from "../components/P.astro";
+import Ul from "../components/Ul.astro";
+import Layout from "../layouts/Layout.astro";
+
+const domain = "wir1234.de";
+const fqdn = (sub: string) => `${sub}.${domain}`;
+const domains = {
+    mumble: ["mumble", "murmur", "mumla"].map(fqdn),
+    teamspeak: ["ts", "ts3"].map(fqdn),
+};
+
+const downloads = [
+    "https://teamspeak.com/downloads",
+    "https://www.mumble.info/downloads",
+];
+---
+
+<Layout title="DEPD">
+    <main class="mx-auto flex flex-col place-items-center text-center">
+        <H1>[DEPD] Deutsche Panzer-Division</H1>
+
+        <P>
+            Die Panzerbesatzungen der Deutschen Panzerdivision kämpfen mit
+            äußerster Tapferkeit für Einigkeit und Recht und Freiheit!
+        </P>
+        <A href="https://eu.wargaming.net/clans/wot/500136749">
+            Die Clan-Seite der DEPD bei Wargaming
+        </A>
+
+        <picture>
+            <!-- <source srcset="/depd.avif" type="image/avif" /> -->
+            <source srcset="/depd.webp" type="image/webp" />
+            <img
+                class="mx-auto my-4 max-h-64 sm:max-h-96"
+                src="/depd.png"
+                alt="DEPD Clan Logo"
+            />
+        </picture>
+
+        <P>
+            Der TeamSpeak-Server des Clans ist unter folgenden Adressen
+            erreichbar:
+        </P>
+        <Ul>
+            {
+                domains.teamspeak.map((it) => (
+                    <li>
+                        <A href={`ts3server://${it}`}>{it}</A>
+                    </li>
+                ))
+            }
+        </Ul>
+
+        <P> Alternativ kann auf den Mumble-Server ausgewichen werden: </P>
+        <Ul>
+            {
+                domains.mumble.map((it) => (
+                    <li>
+                        <A href={`mumble://${it}`}>{it}</A>
+                    </li>
+                ))
+            }
+        </Ul>
+
+        <P>Downloads:</P>
+        <Ul>
+            {
+                downloads.map((it) => (
+                    <li>
+                        <A href={it}>{it}</A>
+                    </li>
+                ))
+            }
+        </Ul>
+    </main>
+</Layout>
