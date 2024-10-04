@@ -1,0 +1,24 @@
+---
+import "../main.css";
+
+type Props = {
+    title: string;
+};
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="de">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{title}</title>
+        <link rel="icon" href="/depd.png" />
+        <link rel="icon" href="/depd.webp" />
+    </head>
+    <body
+        class="dark mx-4 flex min-h-screen bg-neutral-100 font-sans text-neutral-700 dark:bg-neutral-900 dark:text-neutral-300">
+        <slot />
+    </body>
+</html>

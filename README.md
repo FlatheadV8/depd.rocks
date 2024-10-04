@@ -1,1 +1,1 @@
-# depd.rocks
+# depd
